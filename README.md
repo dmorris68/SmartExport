@@ -1,5 +1,7 @@
 # Smart Export for Autodesk Fusion
 
+Current add-in version: **1.1.1**
+
 Smart Export adds a **Smart Export** button to the Design workspace's Add-Ins
 panel and an item to Fusion's File menu. It exports the active design with:
 
@@ -19,6 +21,15 @@ Component and occurrence exports offer the full format list.
 Export folders are remembered independently for each saved Fusion cloud
 project, using the project's stable Autodesk project ID. A project with no
 saved folder starts in Documents and never inherits another project's folder.
+
+The export dialog opens at a readable minimum size and shows the current naming
+examples:
+
+```text
+Incrementing example: Part_v1.step
+
+Timestamp example: Part_2026-07-20_14-35-02.step
+```
 
 ## Install
 

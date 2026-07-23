@@ -16,7 +16,12 @@ def safe_stem(name):
 
 
 def next_sequence(folder, stem, extension, width=1):
-    """Find the first version above all matching ``stem_vN.ext`` files."""
+    """Return the next unpadded ``stem_vN.ext`` name.
+
+    Existing zero-padded names from earlier Smart Export builds are recognized
+    when determining the highest version, but newly generated names are
+    unpadded by default to match Fusion's former built-in behavior.
+    """
     folder = Path(folder)
     ext = extension.lower().lstrip(".")
     pattern = re.compile(

@@ -25,8 +25,8 @@ except ImportError:
     )
 
 
-CMD_ID = "David_SmartExport_Command"
-CONTEXT_CMD_ID = "David_SmartExport_ContextCommand"
+CMD_ID = "dmorris68_SmartExport_Command"
+CONTEXT_CMD_ID = "dmorris68_SmartExport_ContextCommand"
 CMD_NAME = "Smart Export"
 CMD_DESCRIPTION = "Export with a sequential version or saved-history timestamp."
 FORMATS = ("STEP", "STL", "3MF", "IGES", "SAT", "SMT", "F3D", "OBJ", "USD")

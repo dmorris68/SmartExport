@@ -12,17 +12,26 @@ class SmartExportCoreTests(unittest.TestCase):
         self.assertEqual(safe_stem('Gear: 2/Final.f3d'), "Final")
         self.assertEqual(safe_stem("bad:name"), "bad_name")
 
-    def test_sequence_scans_only_matching_format_and_stem(self):
+    def test_first_sequence_uses_unpadded_fusion_pattern(self):
         with tempfile.TemporaryDirectory() as folder:
-            for name in ("Part_v001.step", "part_v009.STEP", "Part_v100.stl",
-                         "Other_v050.step", "Part.step"):
+            self.assertEqual(next_sequence(folder, "Part", "step"), "Part_v1.step")
+
+    def test_sequence_scans_unpadded_versions_for_matching_format_and_stem(self):
+        with tempfile.TemporaryDirectory() as folder:
+            for name in ("Part_v1.step", "part_v9.STEP", "Part_v100.stl",
+                         "Other_v50.step", "Part.step"):
                 Path(folder, name).touch()
             self.assertEqual(next_sequence(folder, "Part", "step"), "Part_v10.step")
 
-    def test_sequence_grows_beyond_width(self):
+    def test_sequence_stays_unpadded_at_large_values(self):
         with tempfile.TemporaryDirectory() as folder:
             Path(folder, "Part_v999.step").touch()
             self.assertEqual(next_sequence(folder, "Part", "step"), "Part_v1000.step")
+
+    def test_sequence_recognizes_legacy_padded_exports(self):
+        with tempfile.TemporaryDirectory() as folder:
+            Path(folder, "Part_v009.step").touch()
+            self.assertEqual(next_sequence(folder, "Part", "step"), "Part_v10.step")
 
     @patch("smart_export_core.datetime")
     def test_timestamp_uses_local_time(self, mocked_datetime):
