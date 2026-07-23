@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+SmartExport.log
+settings.json
+.DS_Store
+Thumbs.db
