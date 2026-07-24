@@ -4,3 +4,4 @@ SmartExport.log
 settings.json
 .DS_Store
 Thumbs.db
+tests/

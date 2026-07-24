@@ -50,11 +50,3 @@ Timestamp mode requires the document to have been saved. Its timestamp comes
 from `Document.dataFile.dateCreated`, i.e. the active saved history entry.
 If two versions have the same one-second timestamp, Smart Export appends `_2`,
 `_3`, and so on instead of overwriting a file.
-
-## Development checks
-
-The naming code is intentionally independent from Fusion's `adsk` module:
-
-```powershell
-python -m unittest discover -s tests -v
-```
