@@ -2,7 +2,7 @@
 
 Current add-in version: **1.1.1**
 
-Smart Export adds a **Smart Export** button to the Design workspace's Add-Ins
+Smart Export adds a **Smart Export** command to the Design workspace's Add-Ins
 panel and an item to Fusion's File menu. It exports the active design with:
 
 - an incrementing filename found by scanning the destination folder
