@@ -22,8 +22,7 @@ Export folders are remembered independently for each saved Fusion cloud
 project, using the project's stable Autodesk project ID. A project with no
 saved folder starts in Documents and never inherits another project's folder.
 
-The export dialog opens at a readable minimum size and shows the current naming
-examples:
+The export dialog shows the current naming examples:
 
 ```text
 Incrementing example: Part_v1.step
